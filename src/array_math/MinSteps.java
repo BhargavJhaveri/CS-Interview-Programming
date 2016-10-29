@@ -36,7 +36,17 @@ It takes 1 step to move from (0, 0) to (1, 1). It takes one more step to move fr
 
         MinSteps minSteps = new MinSteps();
 
-//        minSteps.coverPoints(null, null);
+        ArrayList<Integer> x = new ArrayList<>();
+        x.add(0);
+        x.add(1);
+        x.add(2);
+
+        ArrayList<Integer> y = new ArrayList<>();
+        y.add(0);
+        y.add(1);
+        y.add(2);
+
+        System.out.println(minSteps.coverPoints(x, y));
 
     }
 
@@ -47,7 +57,7 @@ It takes 1 step to move from (0, 0) to (1, 1). It takes one more step to move fr
         int steps = 0;
         int size = X.size();
 
-        if(size == 0) {
+        if (size == 0) {
             return 0;
         }
 
@@ -61,10 +71,10 @@ It takes 1 step to move from (0, 0) to (1, 1). It takes one more step to move fr
 
         So, the minimum steps would be, max(horizontal-distance, vertical-distance)
         */
-        for(int i=1; i<size; i++) {
+        for (int i = 1; i < size; i++) {
 
-            int x_diff = Math.abs(X.get(i) - X.get(i-1));
-            int y_diff = Math.abs(Y.get(i) - Y.get(i-1));
+            int x_diff = Math.abs(X.get(i) - X.get(i - 1));
+            int y_diff = Math.abs(Y.get(i) - Y.get(i - 1));
 
             steps += Math.max(x_diff, y_diff);
 
